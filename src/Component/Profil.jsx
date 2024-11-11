@@ -1,29 +1,19 @@
 import React from "react";
 import { Image, StyleSheet, View, ScrollView } from "react-native";
-import PostHeader from "./PostHeader";
-import PostFooter from "./PostFooter";
-import { PostData } from "../data/PostData";
+// import PostHeader from "./PostHeader";
+// import PostFooter from "./PostFooter";
 import { ColorsLogin } from "../Utits/Vectors/ColorsLogin";
+import HouseComponent from "./HouseComponent";
+import CategorieComponent from "./CategorieComponent";
 
 const Profil = () => {
   return (
     <ScrollView style={styles.postContainer}>
-      {PostData.map((item) => (
-        <View key={item.id}>
-          <PostHeader
-            profileImg={item.profileImg}
-            name={item.name}
-            date={item.date}
-            caption={item.caption}
-          />
-          <Image source={item.postImg} style={styles.postImg} />
-          <PostFooter data={item} />
-        </View>
-      ))}
+      <HouseComponent />
+      <CategorieComponent />
     </ScrollView>
   );
 };
-
 const styles = StyleSheet.create({
   postContainer: {
     backgroundColor: ColorsLogin.white,
@@ -34,5 +24,4 @@ const styles = StyleSheet.create({
     height: 250,
   },
 });
-
 export default Profil;
